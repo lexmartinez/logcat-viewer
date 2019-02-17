@@ -16,7 +16,6 @@ export default class Viewer extends Component {
       data = socketData
     }
     this.setState({ data });
-    console.log(this.state.follow)
     if (this.state.follow) {
       this.scrollToBottom();
     }

@@ -3,7 +3,6 @@ const WebSocket = require('ws');
 const http = require('http');
 const path = require('path');
 const { spawn } = require('child_process');
-const open = require('open');
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
@@ -21,10 +20,13 @@ command.on('close', (code) => {
     console.log(`child process exited with code ${code}`);
 });
 
-app.use('/', express.static(path.join(process.cwd(), '/dist')));
-app.get('/', (req, res) => res.sendFile(path.join(process.cwd(), '/dist/index.html')));
+app.use('/', express.static(path.resolve(__dirname, 'dist')));
+app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, 'dist/index.html')));
 
-server.listen(process.env.PORT || 8999, () => {
-    console.log(`logcat-ui running on port ${server.address().port}`);
-    open(`http://localhost:${server.address().port}`)
-})
+if (!module.parent) {
+    server.listen(process.env.PORT || 8999, () => {
+        console.log(`logcat-ui running on port ${server.address().port}`);
+    })
+} else {
+    module.exports = server;
+}
