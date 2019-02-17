@@ -1,5 +1,5 @@
 {
-  "name": "logcat-ui",
+  "name": "logcat-viewer",
   "version": "1.0.0",
   "description": "An User Friendly ADB Logcat Web Viewer",
   "scripts": {

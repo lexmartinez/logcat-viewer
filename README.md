@@ -2,13 +2,13 @@
 
 :radio: An User Friendly ADB Logcat Viewer written in React and NodeJS
 
-[![NPM](https://nodei.co/npm/logcat-ui.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/logcat-ui)
+[![NPM](https://nodei.co/npm/logcat-viewer.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/logcat-viewer)
 
 ## Usage
 
 ```bash
 # install the module globally with npm
-$ npm install -g logcat-ui
+$ npm install -g logcat-viewer
 
 # use the module
 $ logcat-ui
