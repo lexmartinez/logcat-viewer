@@ -1,41 +1,58 @@
 {
-    "name": "logcat-ui",
-    "version": "1.0.0",
-    "description": "An User Friendly ADB Logcat Web Viewer",
-    "main": "index.js",
-    "scripts": {
-      "start": "nodemon ./server"
-    },
-    "keywords": [
-      "parcel", "react", "babel", "fullstack", "adb", "logcat", "logcat-viewer",
-      "android-debug", "web-ui", "react", "node", "express", "fullstack"
-    ],
-    "author": "Lex Martinez<lex0316@gmail.com>",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/lexmartinez/logcat-ui.git"
-      },
-    "bugs": {
-        "url": "https://github.com/lexmartinez/logcat-ui/issues"
-    },
-    "homepage": "https://github.com/lexmartinez/logcat-ui",
-    "license": "MIT",
-    "dependencies": {
-      "babel-preset-env": "^1.6.1",
-      "babel-preset-react": "^6.24.1",
-      "global": "^4.3.2",
-      "parcel-bundler": "^1.6.2",
-      "react": "^16.2.0",
-      "react-dom": "^16.2.0",
-      "express": "^4.16.4",
-      "express-ws": "^4.0.0",
-      "websocket-stream": "^5.1.2",
-      "open": "^0.0.5"
-    },
-    "devDependencies": {
-      "eslint": "^4.19.1",
-      "eslint-plugin-react": "^7.7.0",
-      "node-sass": "^4.8.3",
-      "nodemon": "^1.18.10"
-    }
+  "name": "logcat-ui",
+  "version": "1.0.0",
+  "description": "An User Friendly ADB Logcat Web Viewer",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"nodemon ./server\" \"parcel watch ./client/index.html\"",
+    "build": "parcel build ./client/index.html"
+  },
+  "keywords": [
+    "parcel",
+    "react",
+    "babel",
+    "fullstack",
+    "adb",
+    "logcat",
+    "logcat-viewer",
+    "android-debug",
+    "web-ui",
+    "react",
+    "node",
+    "express",
+    "fullstack"
+  ],
+  "author": "Lex Martinez<lex0316@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexmartinez/logcat-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lexmartinez/logcat-ui/issues"
+  },
+  "homepage": "https://github.com/lexmartinez/logcat-ui",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "express-ws": "^4.0.0",
+    "global": "^4.3.2",
+    "open": "^0.0.5",
+    "parcel-bundler": "^1.6.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-websocket": "^2.0.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.85.0",
+    "websocket-stream": "^5.1.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.18.10"
+  }
 }

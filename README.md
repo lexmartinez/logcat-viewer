@@ -1,6 +1,6 @@
 # logcat-ui
 
-:radio: An User Friendly ADB Logcat Viewer written on React and NodeJS
+:radio: An User Friendly ADB Logcat Viewer written in React and NodeJS
 
 [![NPM](https://nodei.co/npm/logcat-ui.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/logcat-ui)
 

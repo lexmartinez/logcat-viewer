@@ -21,10 +21,10 @@ command.on('close', (code) => {
     console.log(`child process exited with code ${code}`);
 });
 
-app.use('/dist', express.static(path.join(process.cwd(), '/dist')));
+app.use('/', express.static(path.join(process.cwd(), '/dist')));
 app.get('/', (req, res) => res.sendFile(path.join(process.cwd(), '/dist/index.html')));
 
 server.listen(process.env.PORT || 8999, () => {
     console.log(`logcat-ui running on port ${server.address().port}`);
-    // open(`http://localhost:${server.address().port}`)
+    open(`http://localhost:${server.address().port}`)
 })

@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.ui.table thead tr:first-child > th {
+    position: sticky !important;
+    top: 0;
+    z-index: 2;
+}
+
+.ui.table tbody {
+    font-family: 'Cutive Mono', 'Courier New', Courier, monospace !important; 
+}
+
+.follow-checkbox {
+    float: right;
+    margin-right: 10px;
+}
