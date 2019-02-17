@@ -18,7 +18,7 @@ go to [http://localhost:9080](http://localhost:9080) in your browser.
 
 ## Screenshots
 
-screenshot1
+![screenshot-v1.0.0](https://github.com/lexmartinez/logcat-ui/raw/master/screenshots/screenshot-1.0.0.jpg)
 
 ## Development setup
 
