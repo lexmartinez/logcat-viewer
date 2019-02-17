@@ -28,12 +28,12 @@
   "author": "Lex Martinez<lex0316@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lexmartinez/logcat-ui.git"
+    "url": "git+https://github.com/lexmartinez/logcat-viewer.git"
   },
   "bugs": {
-    "url": "https://github.com/lexmartinez/logcat-ui/issues"
+    "url": "https://github.com/lexmartinez/logcat-viewer/issues"
   },
-  "homepage": "https://github.com/lexmartinez/logcat-ui",
+  "homepage": "https://github.com/lexmartinez/logcat-viewer",
   "license": "MIT",
   "dependencies": {
     "babel-preset-env": "^1.6.1",

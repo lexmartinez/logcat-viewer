@@ -25,7 +25,7 @@ app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, 'dist/index.html
 
 if (!module.parent) {
     server.listen(process.env.PORT || 8999, () => {
-        console.log(`logcat-ui running on port ${server.address().port}`);
+        console.log(`logcat-viewer running on port ${server.address().port}`);
     })
 } else {
     module.exports = server;
