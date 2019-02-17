@@ -14,7 +14,7 @@ $ npm install -g logcat-ui
 $ logcat-ui
 ```
 
-go to [http://localhost:9080](http://localhost:9080) in your browser.
+go to [http://localhost:8999](http://localhost:8999) in your browser.
 
 ## Screenshots
 
@@ -32,7 +32,7 @@ cd logcat-ui
 # install dependencies
 yarn install
 
-# run the app at localhost:9080
+# run the app at localhost:8999
 yarn start
 ```
 
