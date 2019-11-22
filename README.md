@@ -18,7 +18,7 @@ go to [http://localhost:8999](http://localhost:8999) in your browser.
 
 ## Screenshots
 
-![screenshot-v1.0.0](https://github.com/lexmartinez/logcat-viewer/raw/master/screenshots/screenshot-1.0.0.jpg)
+![screenshot-v1.1.0](https://github.com/lexmartinez/logcat-viewer/raw/master/screenshots/screenshot-1.1.0.jpg)
 
 ## Development setup
 
