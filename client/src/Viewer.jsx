@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Table, Checkbox } from 'semantic-ui-react';
+import { Table, Checkbox, Input, Button } from 'semantic-ui-react';
 import Websocket from 'react-websocket';
+
 export default class Viewer extends Component {
   constructor() {
     super();
-    this.state = { data: '', follow: false };
+    this.state = { data: '', follow: false, search: '' };
     this.handleData = this.handleData.bind(this);
     this.processData = this.processData.bind(this);
     this.scrollToBottom = this.scrollToBottom.bind(this);
@@ -26,7 +27,7 @@ export default class Viewer extends Component {
   }
 
   processData() {
-    const { data = ''} = this.state;
+    const { data = '', search = ''} = this.state;
     return data.split('\n').map((line) => {
       let cols = line.split(' ').filter((item) => item !== '');
       if (cols.length >= 5) {
@@ -37,7 +38,30 @@ export default class Viewer extends Component {
         }
       }
       return { message: line }
+    }).filter((row) => {
+      const { message = '', pid = '', tid = '' } = row;
+      return !search  || `${message}${pid}${tid}`.toLowerCase().indexOf(`${search}`.toLowerCase()) !== -1
     })
+  }
+
+  exportData(data = []) {
+    const fieldSeparator = ',';
+    const rowSeparator = '\n';
+    if (!!data && data.length > 0) {
+      const headers = Object.keys(data[0]).join(fieldSeparator);
+      let csv = data.map((row) => {
+        return Object.values(row).map(i => `${i}`.replace(fieldSeparator, ' ')).join(fieldSeparator)
+      });
+      csv = [ headers, ...csv ].join(rowSeparator);
+      const type = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ? 'application/csv' : 'text/csv';
+      const blob = new Blob(['\uFEFF', csv], {type});
+      const dataURI = `data:${type};charset=utf-8,\uFEFF${csv}`;
+      const URL = window.URL || window.webkitURL;
+      const csvUrl = (typeof URL.createObjectURL === 'undefined')
+        ? dataURI
+        : URL.createObjectURL(blob);
+      window.open(csvUrl,'_blank');
+    }
   }
  
   render() {
@@ -52,10 +76,16 @@ export default class Viewer extends Component {
             <Table.HeaderCell textAlign={'center'}>PID</Table.HeaderCell>
             <Table.HeaderCell textAlign={'center'}>TID</Table.HeaderCell>
             <Table.HeaderCell width={1} textAlign={'center'}>Type</Table.HeaderCell>
-            <Table.HeaderCell width={11}>Message
-              <Checkbox checked={follow} value={follow} toggle={true}
+            <Table.HeaderCell width={11}>
+              <div className={'options-head'}>
+              <div className={'th-title'}>Message</div>
+              <Input icon='search' placeholder='Search...' className={'input-search'} size={'small'}
+                onChange={(event, data) => { this.setState({ search: data.value }) }}/>
+              <Checkbox checked={follow} value={follow} toggle={false}
                 label={'Follow Log'} className={'follow-checkbox'}
                 onChange={(event, data) => { this.setState({ follow: data.checked }) }}/>
+                <Button icon='download' basic={true} onClick={() => this.exportData(data)}/>
+              </div>
             </Table.HeaderCell>
           </Table.Row>
         </Table.Header>

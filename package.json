@@ -1,6 +1,6 @@
 {
   "name": "logcat-viewer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An User Friendly ADB Logcat Web Viewer",
   "scripts": {
     "start": "concurrently \"nodemon ./server\" \"parcel watch ./client/index.html\"",
@@ -9,7 +9,11 @@
   "bin": {
     "logcat-ui": "./bin/logcat-ui.js"
   },
-  "files": ["dist", "index.js", "bin"],
+  "files": [
+    "dist",
+    "index.js",
+    "bin"
+  ],
   "keywords": [
     "parcel",
     "react",
@@ -37,7 +41,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",   
+    "babel-preset-react": "^6.24.1",
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "express-ws": "^4.0.0",
@@ -46,16 +50,17 @@
     "websocket-stream": "^5.1.2"
   },
   "devDependencies": {
+    "autoprefixer": "^9.7.2",
+    "babel-core": "^6.26.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.18.10",
     "parcel-bundler": "^1.6.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-websocket": "^2.0.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.85.0",
-    "babel-core": "^6.26.3",
-    "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.7.0",
-    "node-sass": "^4.8.3",
-    "nodemon": "^1.18.10"
+    "semantic-ui-react": "^0.85.0"
   }
 }
