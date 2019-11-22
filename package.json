@@ -46,7 +46,7 @@
     "express": "^4.16.4",
     "express-ws": "^4.0.0",
     "global": "^4.3.2",
-    "open": "^0.0.5",
+    "open": "^6.0.0",
     "websocket-stream": "^5.1.2"
   },
   "devDependencies": {
